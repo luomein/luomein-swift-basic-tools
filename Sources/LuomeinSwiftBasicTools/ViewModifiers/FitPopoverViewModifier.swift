@@ -13,6 +13,12 @@ public struct FitPopoverViewModifier : ViewModifier{
     @Environment(\.dismiss) var dismiss
     public var width : Double
     public var height : Double
+    
+    public init( width: Double, height: Double) {
+        
+        self.width = width
+        self.height = height
+    }
     public func body(content: Content) -> some View {
         if UIDevice.current.userInterfaceIdiom == .phone{
             content
