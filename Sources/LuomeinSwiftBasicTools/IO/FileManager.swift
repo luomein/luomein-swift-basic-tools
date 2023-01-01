@@ -16,13 +16,11 @@ public func getDocumentsDirectory() throws -> URL {
     return directoryURL
 }
 
-public func saveDataToDocuments(_ data: Data, jsonFilename: String) {
-
-    
+public func saveDataToDocuments(_ data: Data, filename: String) {
     do {
-        let jsonFileURL = try getDocumentsDirectory().appendingPathComponent(jsonFilename)
+        let fileURL = try getDocumentsDirectory().appendingPathComponent(filename)
         //print("save to: ", jsonFileURL)
-        try data.write(to: jsonFileURL)
+        try data.write(to: fileURL)
     } catch {
         fatalError()
     }
